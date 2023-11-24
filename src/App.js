@@ -4,7 +4,8 @@ import Header from '../src/components/Header'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { motion } from 'framer-motion';
 import { BrowserRouter } from 'react-router-dom';
-import Footer from './components/Footer';
+import './styles/main.scss';
+
 
 const App = () => {
   return (
@@ -12,7 +13,6 @@ const App = () => {
       <Router>
         <Header/>
         <AnimRoutes/>
-        <Footer/>
       </Router>
     </>
   );

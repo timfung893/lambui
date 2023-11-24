@@ -17,6 +17,9 @@ module.exports = {
         grey: '#484B4B',
         accent: '#EEF7F9',
       },
+      active : {
+        fontWeight: 'bold'
+      }
     },
   },
   plugins: [],

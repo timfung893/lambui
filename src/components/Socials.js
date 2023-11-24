@@ -2,7 +2,7 @@ import React from 'react';
 import { ImFacebook, ImInstagram } from 'react-icons/im'
 
 const Socials = () => {
-  return <div className='hidden xl:flex ml-24'>
+  return <div className='socials xl:flex ml-24 mr-4 lg:mr-0'>
     <ul className='flex gap-x-4'>
       <li>
         <a href='http://www.facebook.com' target='_blank' rel="noreferrer"><ImFacebook/></a>

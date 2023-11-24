@@ -4,6 +4,7 @@ import BomImg from '../img/photos/bomBanner.jpg'
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { transition1 } from '../transitions'
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -12,6 +13,13 @@ const Home = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={transition1}>
+          <motion.div
+            initial={{ opacity: 0, y: '100%' }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: '100%' }}
+            transition={transition1}
+            className="w-full lg:flex bg-[#eef7f9] absolute bottom-0 left-0 right-0 top-72 -z-10 px-12">
+          </motion.div>
       <div className="container mx-auto h-full relative">
         <div className="flex flex-col justify-center">
           <motion.div 
@@ -38,9 +46,14 @@ const Home = () => {
               whileHover={{scale: 1.1}}
               transition={{transition1, duration: '1.5'}}
               src={BomImg} 
-              alt="" />
+              alt="" 
+              className='max-h-[850px]'
+              />
             </motion.div>
           </div>
+        </div>
+        <div className="absolute bottom-0 w-full">
+          <Footer/>  
         </div>
       </div>
     </motion.section>

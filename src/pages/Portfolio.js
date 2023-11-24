@@ -13,6 +13,7 @@ import Image3 from '../img/portfolio/3.png'
 import Image4 from '../img/portfolio/4.png'
 import Image5 from '../img/portfolio/5.png'
 import Image6 from '../img/portfolio/6.png'
+import Footer from '../components/Footer';
 
 const Portfolio = () => {
   return (
@@ -21,9 +22,16 @@ const Portfolio = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: '100%' }}
       transition={transition1}>
-      <div className="container mx-auto h-full relative">
-        <div className="flex flex-col lg:flex-row h-full items-center max-h-[700px]
-        justify-stat gap-x-24 text-center">
+      <div className="container mx-auto pt-32">
+        <div className="flex flex-col lg:flex-row h-full items-center
+        justify-start gap-x-24 text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: '100%' }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: '100%' }}
+            transition={transition1}
+            className="lg:flex bg-[#eef7f9] absolute bottom-0 left-0 right-0 top-72 -z-10 px-12">
+          </motion.div>
           <motion.div 
               initial={{ opacity: 0, y: '80%' }}
               animate={{ opacity: 1, y: 0 }}
@@ -35,39 +43,7 @@ const Portfolio = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas fuga laudantium perspiciatis dicta nisi quam. Soluta ut quis maiores labore.</p>
             <Link to={'/contact'} className='btn mb-[30px] max-w-50 mt-5'>Send me an email</Link>
           </motion.div>
-          <motion.div className="grid grid-cols-2 lg:gap-2 bg-[#eef7f9]">
-          <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={transition1}
-              className="max-w-[250px] lg:max-w[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden ">
-              <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={p1} alt="" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={transition1}
-              className="max-w-[250px] lg:max-w[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden ">
-              <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={p2} alt="" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={transition1}
-              className="max-w-[250px] lg:max-w[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden ">
-              <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={p3} alt="" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={transition1}
-              className="max-w-[250px] lg:max-w[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden ">
-              <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={p4} alt="" />
-            </motion.div>
+          <motion.div className="grid grid-cols-2 lg:gap-2 bg-[#eef7f9] overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -118,6 +94,7 @@ const Portfolio = () => {
             </motion.div>
           </motion.div>
         </div>
+        <Footer/>
       </div>
     </motion.section>
   );
