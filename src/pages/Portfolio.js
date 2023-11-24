@@ -14,10 +14,11 @@ import Image4 from '../img/portfolio/4.png'
 import Image5 from '../img/portfolio/5.png'
 import Image6 from '../img/portfolio/6.png'
 import Footer from '../components/Footer';
+import Gallery from '../components/product/Gallery';
 
 const Portfolio = () => {
   return (
-    <motion.section className='section'
+    <motion.section className='section h-full'
       initial={{ opacity: 0, y: '100%' }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: '100%' }}
@@ -36,7 +37,7 @@ const Portfolio = () => {
               initial={{ opacity: 0, y: '80%' }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: '80%' }}
-          className="flex-1 pt-36 pb-14 lg:pt-0 lg:w-auto z-10 flex flex-col justify-center items-center lg:items-start">
+          className="flex-1 pt-2 lg:pt-36 pb-14 lg:pt-0 lg:w-auto z-10 flex flex-col justify-center items-center lg:items-start">
             <h1 className='h1'>My work</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A accusamus explicabo libero, voluptatibus temporibus, eveniet doloribus voluptates aliquam incidunt molestiae dignissimos! Voluptatibus, ipsa fugit quidem ad vel vero culpa natus.</p>
             <br />
@@ -56,7 +57,7 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{transition1, duration: 1.2}}
+              transition={transition1}
               className="max-w-[250px] lg:max-w[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
               <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image2} alt="" />
             </motion.div>
@@ -64,7 +65,7 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{transition1, duration: '1.5'}}
+              transition={transition1}
               className="max-w-[250px] lg:max-w[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
               <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image3} alt="" />
             </motion.div>
@@ -72,7 +73,7 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{transition1, duration: '1.8'}}
+              transition={transition1}
               className="max-w-[250px] lg:max-w[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
               <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image4} alt="" />
             </motion.div>
@@ -80,7 +81,7 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{transition1, duration: '2.1'}}
+              transition={transition1}
               className="max-w-[250px] lg:max-w[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
               <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image5} alt="" />
             </motion.div>
@@ -88,12 +89,15 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{transition1, duration: '2.4'}}
+              transition={transition1}
               className="max-w-[250px] lg:max-w[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
               <img className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500' src={Image6} alt="" />
             </motion.div>
           </motion.div>
         </div>
+        <mot className="gallery">
+          <Gallery/>
+        </mot>
         <Footer/>
       </div>
     </motion.section>

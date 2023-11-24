@@ -13,9 +13,8 @@ const About = () => {
     exit={{ opacity: 0, y: '100%' }}
     transition={transition1}
     className='section'>
-      <div className="container mx-auto lg:pt-32">
-        <div className="flex flex-col lg:flex-row lg:text-left lg:pt-36 h-full items-center 
-        justify-center gap-x-24 text-center">
+      <div className="container sm:bg-black mx-auto pt-32">
+        <div className="flex flex-col lg:flex-row lg:text-left lg:pt-36 h-full items-center justify-center gap-x-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: '100%' }}
             animate={{ opacity: 1, y: 0 }}

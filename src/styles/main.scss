@@ -1,0 +1,130 @@
+@mixin default {
+    background: none;
+    outline: none;
+    text-decoration: none;
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+  @mixin transition {
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  @function weight($weight-name) {
+    @return map-get($font-weights, $weight-name);
+  }
+  
+  @mixin flex($align, $justify, $direction) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+  }
+  
+  @mixin zindex($pos, $index) {
+    position: $pos;
+    z-index: $index;
+  }
+  
+  @mixin positions($pos, $top, $bottom, $left, $right, $width, $height) {
+    content: "";
+    position: $pos;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    width: $width;
+    height: $height;
+  }
+  
+  @mixin width($width, $height, $background, $colors, $radius, $padding) {
+    width: $width;
+    height: $height;
+    background: $background;
+    color: $colors;
+    border-radius: $radius;
+    padding: $padding;
+  }
+  
+  @mixin pa_ma($padding, $marign) {
+    padding: $padding;
+    margin: $marign;
+  }
+  @mixin shadow($shadow) {
+    box-shadow: $shadow;
+  }
+  
+  @mixin grid($columns, $gap) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-gap: $gap;
+  }
+  
+  @mixin media-md {
+    @media screen and (max-width: $tab) {
+      @content;
+    }
+  }
+  
+  @mixin media-sm {
+    @media screen and (max-width: $mobile) {
+      @content;
+    }
+  }
+  
+.gallery {
+    .photos {
+        // grid-template-columns: repeat(2, 1fr);
+        .box {
+            .overlay {
+                @include positions(absolute, none, -4%, 0, none, 100%, auto);
+            }
+        }
+    }
+    .onClickImage {
+        .button {
+        right: 0 !important;
+        }
+    }
+}
+
+.modalOpen {
+    @include positions(fixed, -50px, none, 0, none, 100%, 130vh);
+    z-index: 999999;
+    .onClickImage {
+      @include positions(fixed, auto, none, 0, none, 100%, 113vh);
+      @include flex(center, center, center);
+  
+      img {
+        @include flex(center, center, center);
+        width: auto;
+        height: 600px;
+        z-index: 99999;
+      }
+      .button {
+        @include positions(absolute, 6%, none, none, 0%, rgba(55,55,55, .5), none);
+        @include width(40px, 40px, none, white, 0px 0 0px 24px, none);
+        z-index: 999999;
+        font-size: 18px;
+        transition: all .25s ease;
+        &:hover {
+          box-shadow: 0 0 3px white ;
+        }
+      }
+      &::after {
+        content: "";
+        @include positions(absolute, -50px, none, 0, none, 100%, 105%);
+        background: rgba(#000000, 0.8); 
+      }
+    }
+}
+.modalClose {
+    display: none;
+    .button {
+        display: none;
+    }
+}
